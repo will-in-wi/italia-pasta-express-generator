@@ -1,129 +1,33 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Italian Pasta Express Meal Generator</title>
-</head>
-<body>
-  <h1>Italian Pasta Express Meal Generator</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href="/script.js" />
+    <link rel="preload" href="/menu.json" />
+    <title>Italia Pasta Express Meal Generator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>Italia Pasta Express Meal Generator</h1>
 
-  <div class="step1">
-    <h2>Meal Type</h2>
+      <div id="step1" class="step1">
+        <h2>Select a Meal</h2>
 
-    <div id="meal-choices">
-      <a href="#" class="one-meat">5 Veggies &amp; 1 Meat</a>
-      <a href="#" class="two-meat">5 Veggies &amp; 2 Meat</a>
-      <a href="#" class="veggie">Vegetarian</a>
-      <a href="#" class="pasta-sauce">Pasta &amp; Sauce</a>
+        <ul id="meal-choices"></ul>
+      </div>
+
+      <div id="step2" class="step2 hidden">
+        <h2>Your random meal!</h2>
+
+        <table id="output"></table>
+
+        <a href="#" id="restart">Pick a different meal…</a>
+      </div>
     </div>
-  </div>
 
-  <div class="step2">
-    <h2>Your random meal!</h2>
-
-    <h3>Sauce:</h3>
-    <span id="sauce-output"></span>
-
-    <h3>Veggies:</h3>
-    <span id="veggies-output"></span>
-
-    <h3>Meat:</h3>
-    <span id="meat-output"></span>
-
-    <h3>Pasta:</h3>
-    <span id="pasta-output"></span>
-  </div>
-
-  <script>
-    (function(){
-      'use strict';
-
-      // http://stackoverflow.com/a/2450976/3042016
-      function shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
-
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
-
-          // Pick a remaining element...
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
-
-          // And swap it with the current element.
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
-        }
-
-        return array;
-      }
-
-      function set_sauce() {
-        var options = shuffle([
-          'Mild Tomato',
-          'Spicy Tomato',
-          'Alfredo',
-          'Spicy Rosa',
-          'Mild Rosa'
-        ]);
-
-        var out = document.getElementById('sauce-output');
-        out.innerHTML = options[0];
-      }
-
-      function set_veggies(n) {
-        var options = shuffle([
-          'Broccoli',
-          'Zucchini',
-          'Mix Peppers',
-          'Mushrooms',
-          'Tomatoes',
-          'Spinach',
-          'Peas',
-          'Black Olives',
-          'Pesto',
-          'Garlic',
-          'Onions'
-        ]);
-
-        var out = document.getElementById('veggies-output');
-        out.innerHTML = options.slice(0, n).join(', ');
-      }
-
-      function set_meat(n) {
-        var options = shuffle([
-          'Chicken',
-          'Spicy Sausage',
-          'Meatballs',
-          'Pepperoni'
-        ]);
-
-        var out = document.getElementById('meat-output');
-        out.innerHTML = options.slice(0, n).join(', ');
-      }
-
-      function set_pasta() {
-        var options = shuffle([
-          'Farfalle (bow tie)',
-          'Penne',
-          'Linguine',
-          'Whole Wheat Rotini',
-          'Campanelle'
-        ]);
-
-        var out = document.getElementById('pasta-output');
-        out.innerHTML = options[0];
-      }
-
-      var one_meat = document.querySelector('#meal-choices a.one-meat');
-      one_meat.onclick = function(e){
-        e.preventDefault();
-        set_sauce();
-        set_veggies(5);
-        set_meat(1);
-        set_pasta();
-      };
-    })();
-  </script>
-</body>
+    <script src="/script.js"></script>
+  </body>
 </html>

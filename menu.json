@@ -1,0 +1,63 @@
+{
+    "ingredients": {
+        "sauces": [
+            "Mild Tomato",
+            "Spicy Tomato",
+            "Alfredo",
+            "Spicy Rosa",
+            "Mild Rosa"
+        ],
+        "veggies": [
+            "Broccoli",
+            "Zucchini",
+            "Mix Peppers",
+            "Mushrooms",
+            "Tomatoes",
+            "Spinach",
+            "Peas",
+            "Black Olives",
+            "Pesto",
+            "Garlic",
+            "Onions"
+        ],
+        "meats": [
+          "Chicken",
+          "Spicy Sausage",
+          "Meatballs",
+          "Pepperoni"
+        ],
+        "pastas": [
+          "Farfalle (bow tie)",
+          "Penne",
+          "Linguine",
+          "Whole Wheat Rotini",
+          "Campanelle"
+        ]
+    },
+    "meals": {
+        "5 Veggies & 1 Meat": {
+          "sauces": 1,
+          "veggies": 5,
+          "meats": 1,
+          "pastas": 1
+        },
+        "5 Veggies & 2 Meats": {
+          "sauces": 1,
+          "veggies": 5,
+          "meats": 2,
+          "pastas": 1
+        },
+        "Vegetarian": {
+          "sauces": 1,
+          "veggies": 8,
+          "meats": 0,
+          "pastas": 1
+        },
+        "Pasta & Sauce": {
+          "sauces": 1,
+          "veggies": 0,
+          "meats": 0,
+          "pastas": 1
+        }
+    }
+}
